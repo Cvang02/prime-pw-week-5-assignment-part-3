@@ -11,7 +11,7 @@ let collection = [];
 //   - Return the newly created object
 
 function addToCollection(title, artist, yearPublished) {
-    let album = {
+    const album = {
         title ,
         artist ,
         yearPublished
@@ -19,8 +19,7 @@ function addToCollection(title, artist, yearPublished) {
     collection.push(album)
     return album;
 }
-
-
+   
 // - Test the `addToCollection` function:
 //   - Add 6 albums to your collection. Aim to have a mix of both 
 // same and different artists and published years. 
@@ -42,35 +41,51 @@ console.log(collection);
 //   - Console.log the number of items in the array.
 //   - Loop over the array and console.log each album's information 
 // formatted like: `TITLE by ARTIST, published in YEAR`.
-
-// function showCollection (array) {
-//     console.log('The number of items in the array', array.length);
-//     for (let i=0; i<array.length; i++);
-//     console.log (array[collection.title], 'by', array.artist, 'published in', array.yearPublished);
-// }
-// console.log(showCollection(collection));
-
-// function showCollection (array) {
-//     console.log('The number of items in the array', array.length);
-//     for (let i=0; i<array.length; i++);
-//         if (array.yearPublished === 2020) {
-//         console.log (` ${album.title} by ${album.artist} published in ${album.yearPublished}`);
-//         }
-// }
-// console.log(showCollection(collection));
-
-
 // - Test the `showCollection` function.
+
+function showCollection (array) {
+    console.log('The number of items in the array', array.length);
+    for (let i=0; i<array.length; i++);
+    console.log (array[0].title, 'by', array[0].artist, 'published in', array[0].yearPublished);
+    console.log (array[1].title, 'by', array[1].artist, 'published in', array[1].yearPublished);
+    console.log (array[2].title, 'by', array[2].artist, 'published in', array[2].yearPublished);
+    console.log (array[3].title, 'by', array[3].artist, 'published in', array[3].yearPublished);
+    console.log (array[4].title, 'by', array[4].artist, 'published in', array[4].yearPublished);
+    console.log (array[5].title, 'by', array[5].artist, 'published in', array[5].yearPublished);
+    return collection;
+}
+
+console.log(showCollection(collection));
+
 
 // - Add a function named `findByArtist`. This function should:
 //   - Take in `artist` (a string) parameter
 //   - Create an array to hold any results, empty to start
 //   - Loop through the `collection` and add any objects with a matching artist to the array.
 //   - Return the array with the matching results. If no results are found, return an empty array.
-
-// - Test the `findByArtist` function. Make sure to test with an artist you know is in the collection, as well as an artist you know is not in your collection. Check that for artists with multiple matches, all are found.
-
+//   - Test the `findByArtist` function. Make sure to test with an artist you know is in the collection,
+//  as well as an artist you know is not in your collection. Check that for artists with multiple matches, all are found.
 // > When testing your functions, write all tests in the JavaScript file!
+
+
+function findByArtist (artist) {
+    let anArray = [];
+    let singers = 'BTS'
+    for (let i=0; i<artist.length; i++) {
+        if (artist[i].artist === singers) {
+            console.log(artist[i]);
+            
+        }
+        else {
+            return [];
+        }
+    }
+}
+
+console.log(findByArtist (collection));
+// console.log(findByArtist ('BTS'));
+// console.log(findByArtist ('BLackPink'));
+
 
 // ### Stretch goals
 
